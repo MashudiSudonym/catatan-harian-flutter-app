@@ -8,7 +8,7 @@ after clone this repo,
 
 ---
 
-for information, i am using flutter version 3.19.6 (maybe i am not going to upgrade flutter version for this project)
+for information, i am using flutter version stable (latest version) for this project
 
 you can using fvm for setup select flutter version
 
