@@ -1,6 +1,5 @@
 import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
 import 'package:catatan_harian/gen/assets.gen.dart';
-import 'package:catatan_harian/src/core/shared/misc/method.dart';
 import 'package:catatan_harian/src/core/shared/widget/corner_header_logo.dart';
 import 'package:catatan_harian/src/core/shared/widget/custom_text_field_transparent.dart';
 import 'package:flutter/material.dart';

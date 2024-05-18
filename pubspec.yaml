@@ -7,7 +7,7 @@ environment:
   sdk: ">=3.3.4 <4.0.0"
 
 dependencies:
-  adaptive_responsive_util: ^1.0.3
+  adaptive_responsive_util: ^1.0.5
   animated_text_kit: ^4.2.2
   auto_size_text: ^3.0.0
   cached_network_image: ^3.3.1
