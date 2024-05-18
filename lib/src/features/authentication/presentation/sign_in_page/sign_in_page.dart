@@ -2,7 +2,7 @@ import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
 import 'package:catatan_harian/gen/assets.gen.dart';
 import 'package:catatan_harian/src/core/shared/misc/method.dart';
 import 'package:catatan_harian/src/core/shared/widget/corner_header_logo.dart';
-import 'package:catatan_harian/src/core/shared/widget/custom_text_field.dart';
+import 'package:catatan_harian/src/core/shared/widget/custom_text_field_transparent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,12 +38,12 @@ class SignInPage extends ConsumerWidget {
                       ),
                     ).expanded(),
                     verticalSpace(24),
-                    CustomTextField(
-                        labelText: 'e-mail',
-                        controller: emailController,
-                        maxLines: 1,
-                        keyboardType: TextInputType.emailAddress,
-                      ),
+                    CustomTextFieldTransparent(
+                      labelText: 'e-mail',
+                      controller: emailController,
+                      maxLines: 1,
+                      keyboardType: TextInputType.emailAddress,
+                    ),
                   ],
                 ),
               ),

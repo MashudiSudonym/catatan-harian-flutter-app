@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
+class CustomTextFieldTransparent extends StatelessWidget {
   final String labelText;
   final TextEditingController controller;
   final int? maxLines;
@@ -12,7 +12,7 @@ class CustomTextField extends StatelessWidget {
   final void Function(String)? onChanged;
   final void Function()? onTap;
 
-  const CustomTextField({
+  const CustomTextFieldTransparent({
     super.key,
     required this.labelText,
     required this.controller,
