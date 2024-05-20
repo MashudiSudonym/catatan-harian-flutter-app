@@ -13,7 +13,7 @@ class CornerHeaderLogo extends StatelessWidget {
       width: context.width * 0.50,
       padding: const EdgeInsets.symmetric(
         horizontal: 16,
-        vertical: 32,
+        vertical: 24,
       ),
       child: Row(
         children: [
