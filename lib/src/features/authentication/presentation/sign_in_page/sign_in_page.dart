@@ -22,6 +22,7 @@ class SignInPage extends ConsumerWidget {
               Assets.images.signInBg.image(
                 fit: BoxFit.fill,
                 width: context.width,
+                height: context.height,
               ),
               const Positioned(
                 top: 0,
