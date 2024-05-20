@@ -1,6 +1,9 @@
 import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:catatan_harian/gen/assets.gen.dart';
 import 'package:catatan_harian/src/core/common/widget/corner_header_logo.dart';
+import 'package:catatan_harian/src/core/common/widget/custom_primary_button.dart';
+import 'package:catatan_harian/src/core/common/widget/custom_secure_text_field_transparent.dart';
 import 'package:catatan_harian/src/core/common/widget/custom_text_field_transparent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,6 +13,7 @@ class SignInPage extends ConsumerWidget {
   SignInPage({super.key});
 
   final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -51,6 +55,39 @@ class SignInPage extends ConsumerWidget {
                         controller: emailController,
                         maxLines: 1,
                         keyboardType: TextInputType.emailAddress,
+                      ),
+                      verticalSpace(16),
+                      CustomSecureTextFieldTransparent(
+                        labelText: 'password',
+                        controller: passwordController,
+                      ),
+                      verticalSpace(16),
+                      CustomPrimaryButton(
+                        onPressed: () {},
+                        labelText: 'Sign In',
+                      ),
+                      verticalSpace(32),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          AutoSizeText(
+                            "Don't have an account?",
+                            style: GoogleFonts.roboto(
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
+                          horizontalSpace(8),
+                          AutoSizeText(
+                            "Sign up",
+                            style: GoogleFonts.roboto(
+                              fontStyle: FontStyle.italic,
+                              fontWeight: FontWeight.bold,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ).onClick(() {
+                            context.showSnackBar('OPEN SIGN UP PAGE');
+                          }),
+                        ],
                       ),
                     ],
                   ),

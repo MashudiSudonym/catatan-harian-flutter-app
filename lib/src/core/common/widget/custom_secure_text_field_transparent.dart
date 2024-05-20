@@ -11,10 +11,12 @@ class CustomSecureTextFieldTransparent extends StatefulWidget {
   });
 
   @override
-  State<CustomSecureTextFieldTransparent> createState() => _CustomSecureTextFieldTransparentState();
+  State<CustomSecureTextFieldTransparent> createState() =>
+      _CustomSecureTextFieldTransparentState();
 }
 
-class _CustomSecureTextFieldTransparentState extends State<CustomSecureTextFieldTransparent> {
+class _CustomSecureTextFieldTransparentState
+    extends State<CustomSecureTextFieldTransparent> {
   var _isObscure = true;
 
   @override
@@ -37,6 +39,12 @@ class _CustomSecureTextFieldTransparentState extends State<CustomSecureTextField
             color: Colors.grey,
           ),
         ),
+        fillColor: Colors.white.withOpacity(0.3),
+        filled: true,
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 12,
+        ),
         suffixIcon: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4),
           child: IconButton(
@@ -44,9 +52,7 @@ class _CustomSecureTextFieldTransparentState extends State<CustomSecureTextField
             icon: Icon(
               color: Colors.black,
               size: 18,
-              (_isObscure == true)
-                  ? Icons.visibility
-                  : Icons.visibility_off,
+              (_isObscure == true) ? Icons.visibility : Icons.visibility_off,
             ),
             onPressed: () {
               setState(() {
