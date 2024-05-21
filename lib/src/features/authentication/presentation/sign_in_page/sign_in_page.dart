@@ -1,14 +1,12 @@
 import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:catatan_harian/gen/assets.gen.dart';
 import 'package:catatan_harian/src/core/common/widget/corner_header_logo.dart';
-import 'package:catatan_harian/src/core/common/widget/custom_primary_button.dart';
-import 'package:catatan_harian/src/core/common/widget/custom_secure_text_field_transparent.dart';
-import 'package:catatan_harian/src/core/common/widget/custom_text_field_transparent.dart';
 import 'package:catatan_harian/src/core/routing/router_provider.dart';
+import 'package:catatan_harian/src/features/authentication/presentation/sign_in_page/method/form_sign_in.dart';
+import 'package:catatan_harian/src/features/authentication/presentation/sign_in_page/method/horizontal_sign_in_form.dart';
+import 'package:catatan_harian/src/features/authentication/presentation/sign_in_page/method/vertical_sign_in_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SignInPage extends ConsumerWidget {
   SignInPage({super.key});
@@ -26,9 +24,9 @@ class SignInPage extends ConsumerWidget {
             Assets.images.signInBg.image(
               fit: BoxFit.fill,
               width: context.width,
-              height: context.height < MinimumScreenSize.smallScreenHeight
+              height: context.height > MinimumScreenSize.smallScreenHeight
                   ? context.height
-                  : context.height + (context.height * 0.1),
+                  : context.height + (context.height * 0.2),
             ),
             const Positioned(
               top: 16,
@@ -41,60 +39,33 @@ class SignInPage extends ConsumerWidget {
               right: 0,
               child: Padding(
                 padding: const EdgeInsets.all(32),
-                child: Column(
-                  children: [
-                    Text(
-                      'Welcome Back !',
-                      style: GoogleFonts.roboto(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.black,
-                      ),
-                    ),
-                    verticalSpace(24),
-                    CustomTextFieldTransparent(
-                      labelText: 'e-mail',
-                      controller: emailController,
-                      maxLines: 1,
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    verticalSpace(16),
-                    CustomSecureTextFieldTransparent(
-                      labelText: 'password',
-                      controller: passwordController,
-                    ),
-                    verticalSpace(16),
-                    CustomPrimaryButton(
-                      onPressed: () {
-                        ref.read(routerProvider).pushNamed('home-page');
-                      },
-                      labelText: 'Sign In',
-                    ),
-                    verticalSpace(32),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        AutoSizeText(
-                          "Don't have an account?",
-                          style: GoogleFonts.roboto(
-                            fontStyle: FontStyle.italic,
-                          ),
+                child: context.height > MinimumScreenSize.smallScreenHeight
+                    ? verticalSignInForm(
+                        form: formSignIn(
+                          ref: ref,
+                          emailController: emailController,
+                          passwordController: passwordController,
+                          signInButton: () {
+                            ref.read(routerProvider).pushNamed('home-page');
+                          },
+                          signUpButton: () {
+                            ref.read(routerProvider).pushNamed('sign-up-page');
+                          },
                         ),
-                        horizontalSpace(8),
-                        AutoSizeText(
-                          "Sign up",
-                          style: GoogleFonts.roboto(
-                            fontStyle: FontStyle.italic,
-                            fontWeight: FontWeight.bold,
-                            decoration: TextDecoration.underline,
-                          ),
-                        ).onClick(() {
-                          ref.read(routerProvider).pushNamed('sign-up-page');
-                        }),
-                      ],
-                    ),
-                  ],
-                ),
+                      )
+                    : horizontalSignInForm(
+                        form: formSignIn(
+                          ref: ref,
+                          emailController: emailController,
+                          passwordController: passwordController,
+                          signInButton: () {
+                            ref.read(routerProvider).pushNamed('home-page');
+                          },
+                          signUpButton: () {
+                            ref.read(routerProvider).pushNamed('sign-up-page');
+                          },
+                        ),
+                      ),
               ),
             ),
           ],

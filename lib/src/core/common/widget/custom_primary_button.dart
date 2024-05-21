@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
   final String labelText;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   const CustomPrimaryButton({
     super.key,
     required this.labelText,
