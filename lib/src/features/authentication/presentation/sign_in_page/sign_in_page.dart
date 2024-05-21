@@ -19,83 +19,83 @@ class SignInPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          key: const PageStorageKey('signInEventList'),
-          child: Stack(
-            children: [
-              Assets.images.signInBg.image(
-                fit: BoxFit.fill,
-                width: context.width,
-                height: context.height,
-              ),
-              const Positioned(
-                top: 0,
-                left: 0,
-                child: CornerHeaderLogo(),
-              ),
-              Positioned(
-                top: context.height * 0.3,
-                left: 0,
-                right: 0,
-                child: Padding(
-                  padding: const EdgeInsets.all(32),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Welcome Back !',
-                        style: GoogleFonts.roboto(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.black,
-                        ),
+      body: SingleChildScrollView(
+        key: const PageStorageKey('signInEventList'),
+        child: Stack(
+          children: [
+            Assets.images.signInBg.image(
+              fit: BoxFit.fill,
+              width: context.width,
+              height: context.height,
+            ),
+            const Positioned(
+              top: 0,
+              left: 0,
+              child: CornerHeaderLogo(),
+            ),
+            Positioned(
+              top: context.height * 0.3,
+              left: 0,
+              right: 0,
+              child: Padding(
+                padding: const EdgeInsets.all(32),
+                child: Column(
+                  children: [
+                    Text(
+                      'Welcome Back !',
+                      style: GoogleFonts.roboto(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.black,
                       ),
-                      verticalSpace(24),
-                      CustomTextFieldTransparent(
-                        labelText: 'e-mail',
-                        controller: emailController,
-                        maxLines: 1,
-                        keyboardType: TextInputType.emailAddress,
-                      ),
-                      verticalSpace(16),
-                      CustomSecureTextFieldTransparent(
-                        labelText: 'password',
-                        controller: passwordController,
-                      ),
-                      verticalSpace(16),
-                      CustomPrimaryButton(
-                        onPressed: () {},
-                        labelText: 'Sign In',
-                      ),
-                      verticalSpace(32),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          AutoSizeText(
-                            "Don't have an account?",
-                            style: GoogleFonts.roboto(
-                              fontStyle: FontStyle.italic,
-                            ),
+                    ),
+                    verticalSpace(24),
+                    CustomTextFieldTransparent(
+                      labelText: 'e-mail',
+                      controller: emailController,
+                      maxLines: 1,
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                    verticalSpace(16),
+                    CustomSecureTextFieldTransparent(
+                      labelText: 'password',
+                      controller: passwordController,
+                    ),
+                    verticalSpace(16),
+                    CustomPrimaryButton(
+                      onPressed: () {
+                        ref.read(routerProvider).pushNamed('home-page');
+                      },
+                      labelText: 'Sign In',
+                    ),
+                    verticalSpace(32),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AutoSizeText(
+                          "Don't have an account?",
+                          style: GoogleFonts.roboto(
+                            fontStyle: FontStyle.italic,
                           ),
-                          horizontalSpace(8),
-                          AutoSizeText(
-                            "Sign up",
-                            style: GoogleFonts.roboto(
-                              fontStyle: FontStyle.italic,
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ).onClick(() {
-                            ref.read(routerProvider).pushNamed('sign-up-page');
-                          }),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                        horizontalSpace(8),
+                        AutoSizeText(
+                          "Sign up",
+                          style: GoogleFonts.roboto(
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ).onClick(() {
+                          ref.read(routerProvider).pushNamed('sign-up-page');
+                        }),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
