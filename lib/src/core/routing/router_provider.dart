@@ -27,7 +27,7 @@ Raw<GoRouter> router(RouterRef ref) => GoRouter(
         GoRoute(
           path: '/sign-up',
           name: 'sign-up-page',
-          builder: (context, state) => const SignUpPage(),
+          builder: (context, state) => SignUpPage(),
         ),
         GoRoute(
           path: '/home',

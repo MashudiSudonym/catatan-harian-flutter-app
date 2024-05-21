@@ -17,6 +17,10 @@
     extensions = [
       "MrChetan.flutter"
       "robert-brunhage.flutter-riverpod-snippets"
+      "usernamehw.errorlens"
+      "Gruntfuggly.bettercomment"
+      "patbenatar.advanced-new-file"
+      "pflannery.vscode-versionlens"
     ];
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file

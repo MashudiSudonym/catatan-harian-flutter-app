@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "mrchetan.flutter",
+        "patbenatar.advanced-new-file",
+        "gruntfuggly.bettercomment",
+        "usernamehw.errorlens",
+        "robert-brunhage.flutter-riverpod-snippets",
+        "jeroen-meijer.pubspec-assist",
+        "pflannery.vscode-versionlens",
+        "redhat.vscode-yaml"
+    ]
+}
