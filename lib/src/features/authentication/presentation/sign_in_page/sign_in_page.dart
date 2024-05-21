@@ -5,6 +5,7 @@ import 'package:catatan_harian/src/core/common/widget/corner_header_logo.dart';
 import 'package:catatan_harian/src/core/common/widget/custom_primary_button.dart';
 import 'package:catatan_harian/src/core/common/widget/custom_secure_text_field_transparent.dart';
 import 'package:catatan_harian/src/core/common/widget/custom_text_field_transparent.dart';
+import 'package:catatan_harian/src/core/routing/router_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -85,7 +86,7 @@ class SignInPage extends ConsumerWidget {
                               decoration: TextDecoration.underline,
                             ),
                           ).onClick(() {
-                            context.showSnackBar('OPEN SIGN UP PAGE');
+                            ref.read(routerProvider).pushNamed('sign-up-page');
                           }),
                         ],
                       ),
