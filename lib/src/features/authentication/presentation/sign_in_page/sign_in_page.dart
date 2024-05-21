@@ -29,7 +29,7 @@ class SignInPage extends ConsumerWidget {
               height: context.height,
             ),
             const Positioned(
-              top: 0,
+              top: 16,
               left: 0,
               child: CornerHeaderLogo(),
             ),

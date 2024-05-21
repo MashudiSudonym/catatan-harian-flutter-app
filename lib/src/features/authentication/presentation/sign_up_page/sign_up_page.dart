@@ -34,7 +34,7 @@ class SignUpPage extends ConsumerWidget {
               height: context.height,
             ),
             const Positioned(
-              top: 0,
+              top: 16,
               left: 0,
               child: CornerHeaderLogo(),
             ),
@@ -60,6 +60,7 @@ class SignUpPage extends ConsumerWidget {
                       backgroundImage: NetworkImage(
                         'https://picsum.photos/${Random(100).nextInt(1000)}',
                       ),
+                      
                     ),
                     verticalSpace(24),
                     CustomTextFieldTransparent(
