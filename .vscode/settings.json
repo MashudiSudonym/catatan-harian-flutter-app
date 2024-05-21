@@ -26,7 +26,7 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": "off",
+    "editor.wordBasedSuggestions": false,
   },
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
@@ -41,7 +41,7 @@
   "editor.letterSpacing": 1.5,
   "terminal.integrated.letterSpacing": 1.5,
   "workbench.iconTheme": "vscode-icons",
-  "workbench.productIconTheme": "icons-carbon",
+  "workbench.productIconTheme": "Default",
   "workbench.colorCustomizations": {
     "terminal.background": "#00000000",
     "minimap.background": "#00000000"
