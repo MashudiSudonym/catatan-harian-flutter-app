@@ -21,6 +21,9 @@
       "Gruntfuggly.bettercomment"
       "patbenatar.advanced-new-file"
       "pflannery.vscode-versionlens"
+      "teabyii.ayu"
+      "vscode-icons-team.vscode-icons"
+      "miguelsolorio.fluent-icons"
     ];
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
