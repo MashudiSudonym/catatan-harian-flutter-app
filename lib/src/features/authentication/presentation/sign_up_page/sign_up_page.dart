@@ -60,7 +60,7 @@ class SignUpPage extends ConsumerWidget {
                       backgroundImage: NetworkImage(
                         'https://picsum.photos/${Random(100).nextInt(1000)}',
                       ),
-                      
+                      backgroundColor: Colors.white.withOpacity(0.4),
                     ),
                     verticalSpace(24),
                     CustomTextFieldTransparent(
