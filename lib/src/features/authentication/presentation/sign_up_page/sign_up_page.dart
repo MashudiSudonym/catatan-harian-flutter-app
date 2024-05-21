@@ -31,7 +31,9 @@ class SignUpPage extends ConsumerWidget {
             Assets.images.signUpBg.image(
               fit: BoxFit.fill,
               width: context.width,
-              height: context.height,
+              height: context.height < MinimumScreenSize.smallScreenHeight
+                  ? context.height
+                  : context.height + (context.height * 0.1),
             ),
             const Positioned(
               top: 16,

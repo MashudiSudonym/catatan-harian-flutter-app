@@ -26,7 +26,9 @@ class SignInPage extends ConsumerWidget {
             Assets.images.signInBg.image(
               fit: BoxFit.fill,
               width: context.width,
-              height: context.height,
+              height: context.height < MinimumScreenSize.smallScreenHeight
+                  ? context.height
+                  : context.height + (context.height * 0.1),
             ),
             const Positioned(
               top: 16,
