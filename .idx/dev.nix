@@ -11,7 +11,7 @@
     pkgs.curl
   ];
   # Sets environment variables in the workspace
-  env = {};
+  env = { };
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
@@ -23,30 +23,29 @@
       "pflannery.vscode-versionlens"
       "teabyii.ayu"
       "vscode-icons-team.vscode-icons"
-      "miguelsolorio.fluent-icons"
     ];
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
       onStart = {
         clean-up-project = ''
-            rm -rf build
-            flutter pub get
-            flutter clean 
-            dart run build_runner build --delete-conflicting-outputs
+          rm -rf build
+          flutter pub get
+          flutter clean 
+          dart run build_runner build --delete-conflicting-outputs
         '';
       };
 
       onCreate = {
         install-fvm = ''
-            dart pub global activate fvm
+          dart pub global activate fvm
 
-            $HOME/.pub-cache/bin/fvm install stable --setup
+          $HOME/.pub-cache/bin/fvm install stable --setup
 
-            $HOME/.pub-cache/bin/fvm use stable
+          $HOME/.pub-cache/bin/fvm use stable
 
-            $HOME/.pub-cache/bin/fvm global stable
+          $HOME/.pub-cache/bin/fvm global stable
         '';
-        
+
         # build-flutter = ''
         #   cd /home/user/ika-smansara-app/android
 
@@ -71,7 +70,7 @@
         #   adb -s localhost:5555 wait-for-device
         # '';
       };
-      
+
       # To run something each time the workspace is (re)started, use the `onStart` hook
     };
     # Enable previews and customize configuration
