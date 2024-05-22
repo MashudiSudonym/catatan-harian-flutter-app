@@ -3,12 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
-  final String labelText;
+  final String? labelText;
   final VoidCallback? onPressed;
+  final Size? minimumSize;
+  final Size? maximumSize;
+  final Color? backgroundColor;
+  final Color? foregroundColor;
+  final double? fontSize;
+
   const CustomPrimaryButton({
     super.key,
-    required this.labelText,
-    required this.onPressed,
+    this.labelText,
+    this.onPressed,
+    this.minimumSize,
+    this.maximumSize,
+    this.backgroundColor,
+    this.foregroundColor,
+    this.fontSize,
   });
 
   @override
@@ -16,17 +27,24 @@ class CustomPrimaryButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
-        minimumSize: const Size(
-          double.infinity,
-          44,
-        ),
+        backgroundColor: backgroundColor ?? Colors.black,
+        foregroundColor: foregroundColor ?? Colors.white,
+        minimumSize: minimumSize ??
+            const Size(
+              double.infinity,
+              44,
+            ),
+        maximumSize: maximumSize ??
+            const Size(
+              double.infinity,
+              44,
+            ),
       ),
       child: AutoSizeText(
-        labelText,
+        labelText ?? 'primary',
         style: GoogleFonts.roboto(
           fontWeight: FontWeight.w500,
+          fontSize: fontSize ?? 16,
         ),
       ),
     );
