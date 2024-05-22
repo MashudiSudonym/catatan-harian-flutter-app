@@ -17,8 +17,8 @@
     "*.dart": "${capture}.g.dart, ${capture}.freezed.dart, ${capture}.chopper.dart"
   },
   "[dart]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
     "editor.rulers": [
       80
     ],
@@ -28,7 +28,6 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": "off",
   },
-  "editor.formatOnSave": true,
   "editor.bracketPairColorization.enabled": true,
   "dart.previewFlutterUiGuides": true,
   "editor.stickyScroll.enabled": true,
@@ -37,8 +36,6 @@
   "editor.fontLigatures": true,
   "editor.letterSpacing": 1.5,
   "terminal.integrated.letterSpacing": 1.5,
-  "workbench.iconTheme": "vscode-icons",
-  "workbench.productIconTheme": "Default",
   "workbench.colorCustomizations": {
     "terminal.background": "#00000000",
     "minimap.background": "#00000000"

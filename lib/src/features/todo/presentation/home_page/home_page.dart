@@ -46,26 +46,38 @@ class HomePage extends ConsumerWidget {
             Align(
               alignment: Alignment.topCenter,
               child: Container(
-                decoration: const BoxDecoration(
-                  color: Colors.amber,
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.2),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.white.withOpacity(0.4).withOpacity(0.2),
+                      offset: const Offset(0, 6),
+                      blurRadius: 6,
+                    ),
+                  ],
                 ),
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
+                  horizontal: 24,
                   vertical: 24,
                 ),
-                height: context.height * 0.15,
+                height: context.height > MinimumScreenSize.smallScreenHeight
+                    ? context.height * 0.15
+                    : context.height * 0.2,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AutoSizeText(
                       'Hello Fin,',
-                      style: GoogleFonts.inter(),
+                      style: GoogleFonts.inter(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                     CircleAvatar(
                       radius:
                           context.height > MinimumScreenSize.smallScreenHeight
-                              ? context.width * 0.18
-                              : context.height * 0.18,
+                              ? context.width * 0.06
+                              : context.height * 0.06,
                       backgroundImage: NetworkImage(
                         'https://picsum.photos/${Random(100).nextInt(1000)}',
                       ),
