@@ -68,19 +68,22 @@ class HomePage extends ConsumerWidget {
                       ),
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      children: List.generate(4, (index) {
-                        return cardCategories(
-                          color: colors[index],
-                          icon: icons[index],
-                          category: categories[index],
-                          totalCountTask: totalCountTasks[index],
-                          onPressed: () {
-                            context.showSnackBar(
-                              'Show List of ${categories[index]}',
-                            );
-                          },
-                        );
-                      }),
+                      children: List.generate(
+                        4,
+                        (index) {
+                          return cardCategories(
+                            color: colors[index],
+                            icon: icons[index],
+                            category: categories[index],
+                            totalCountTask: totalCountTasks[index],
+                            onPressed: () {
+                              context.showSnackBar(
+                                'Show List of ${categories[index]}',
+                              );
+                            },
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ],

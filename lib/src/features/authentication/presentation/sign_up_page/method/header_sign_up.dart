@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 List<Widget> headerSignUp({required BuildContext context}) => [
       Text(
-        'Sign In',
+        'Sign Up',
         style: GoogleFonts.roboto(
           fontSize: 24,
           fontWeight: FontWeight.w800,

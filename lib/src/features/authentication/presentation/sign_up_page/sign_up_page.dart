@@ -22,7 +22,7 @@ class SignUpPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: SingleChildScrollView(
-        key: const PageStorageKey('signEventList'),
+        key: const PageStorageKey('signUpEventList'),
         child: Stack(
           children: [
             Assets.images.signUpBg.image(

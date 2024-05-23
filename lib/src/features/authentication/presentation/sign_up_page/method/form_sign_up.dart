@@ -58,7 +58,7 @@ List<Widget> formSignUp({
           ),
           horizontalSpace(8),
           AutoSizeText(
-            "Sign in",
+            "Sign Up",
             style: GoogleFonts.roboto(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
