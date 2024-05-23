@@ -4,6 +4,7 @@ import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:catatan_harian/gen/assets.gen.dart';
 import 'package:catatan_harian/src/features/todo/presentation/home_page/method/button_create_task.dart';
+import 'package:catatan_harian/src/features/todo/presentation/home_page/method/card_categories.dart';
 import 'package:catatan_harian/src/features/todo/presentation/home_page/method/header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -33,7 +34,12 @@ class HomePage extends ConsumerWidget {
       'Groceries',
     ];
 
-    final totalCountTasks = ['2', '4', '5', '0',];
+    final totalCountTasks = [
+      '2',
+      '4',
+      '5',
+      '0',
+    ];
 
     return Scaffold(
       body: SafeArea(
@@ -65,45 +71,16 @@ class HomePage extends ConsumerWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       children: List.generate(4, (index) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: colors[index],
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CircleAvatar(
-                                  radius: 14,
-                                  backgroundColor: Colors.white,
-                                  child: icons[index],
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    AutoSizeText(
-                                      categories[index],
-                                      style: GoogleFonts.inter(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                    AutoSizeText(
-                                      totalCountTasks[index],
-                                      style: GoogleFonts.inter(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
+                        return cardCategories(
+                          color: colors[index],
+                          icon: icons[index],
+                          categorie: categories[index],
+                          totalCountTask: totalCountTasks[index],
+                          onPressed: () {
+                            context.showSnackBar(
+                              'Show List of ${categories[index]}',
+                            );
+                          },
                         );
                       }),
                     ),
@@ -114,13 +91,17 @@ class HomePage extends ConsumerWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: buttonCreateTask(
-                onPressed: () {},
+                onPressed: () {
+                  context.showSnackBar('Create New Task Page');
+                },
               ),
             ),
             Align(
               alignment: Alignment.topCenter,
               child: header(
-                onPressed: () {},
+                onPressed: () {
+                  context.showSnackBar('Profile Page');
+                },
                 height: context.height > MinimumScreenSize.smallScreenHeight
                     ? context.height * 0.15
                     : context.height * 0.2,
