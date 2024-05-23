@@ -1,14 +1,12 @@
 import 'dart:math';
 
 import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:catatan_harian/gen/assets.gen.dart';
 import 'package:catatan_harian/src/features/todo/presentation/home_page/method/button_create_task.dart';
 import 'package:catatan_harian/src/features/todo/presentation/home_page/method/card_categories.dart';
 import 'package:catatan_harian/src/features/todo/presentation/home_page/method/header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
