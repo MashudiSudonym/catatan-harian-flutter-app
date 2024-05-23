@@ -28,7 +28,7 @@ class HomePage extends ConsumerWidget {
     final categories = [
       'Projects',
       'Works',
-      'Daily Taks',
+      'Daily Tasks',
       'Groceries',
     ];
 
@@ -72,7 +72,7 @@ class HomePage extends ConsumerWidget {
                         return cardCategories(
                           color: colors[index],
                           icon: icons[index],
-                          categorie: categories[index],
+                          category: categories[index],
                           totalCountTask: totalCountTasks[index],
                           onPressed: () {
                             context.showSnackBar(

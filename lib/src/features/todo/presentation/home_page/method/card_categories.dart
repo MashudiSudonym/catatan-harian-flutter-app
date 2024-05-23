@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 Widget cardCategories({
   required Color? color,
   required SvgPicture? icon,
-  required String? categorie,
+  required String? category,
   required String? totalCountTask,
   required Function() onPressed,
 }) =>
@@ -31,7 +31,7 @@ Widget cardCategories({
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AutoSizeText(
-                  categorie ?? 'Category',
+                  category ?? 'Category',
                   style: GoogleFonts.inter(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
