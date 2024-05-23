@@ -47,21 +47,21 @@ class HomePage extends ConsumerWidget {
               width: double.infinity,
               padding: EdgeInsets.only(
                 top: context.height > MinimumScreenSize.smallScreenHeight
-                    ? context.height * 0.15 + 16
+                    ? context.height * 0.1 + 16
                     : context.height * 0.2 + 16,
               ),
               child: Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(
-                      bottom: 16.0,
+                      bottom: 8.0,
                       left: 16.0,
                       right: 16.0,
                     ),
                     child: GridView(
                       gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
+                        maxCrossAxisExtent: 250,
                         childAspectRatio: 2,
                         mainAxisSpacing: 16,
                         crossAxisSpacing: 16,
@@ -101,7 +101,7 @@ class HomePage extends ConsumerWidget {
                   context.showSnackBar('Profile Page');
                 },
                 height: context.height > MinimumScreenSize.smallScreenHeight
-                    ? context.height * 0.15
+                    ? context.height * 0.1
                     : context.height * 0.2,
                 radius: context.height > MinimumScreenSize.smallScreenHeight
                     ? context.width * 0.06

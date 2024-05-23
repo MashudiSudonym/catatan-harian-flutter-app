@@ -25,7 +25,6 @@ Widget header({
       ),
       padding: const EdgeInsets.symmetric(
         horizontal: 24,
-        vertical: 24,
       ),
       height: height,
       child: Row(
