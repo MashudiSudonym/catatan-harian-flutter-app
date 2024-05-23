@@ -1,20 +1,116 @@
 import 'dart:math';
 
 import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:catatan_harian/gen/assets.gen.dart';
 import 'package:catatan_harian/src/features/todo/presentation/home_page/method/button_create_task.dart';
 import 'package:catatan_harian/src/features/todo/presentation/home_page/method/header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final colors = [
+      const Color(0xFFB4C4FF),
+      const Color(0xFFCFF3E9),
+      const Color(0xFF9747FF),
+      const Color(0xFFEDBE7D),
+    ];
+    final icons = [
+      Assets.images.projectsIcon.svg(),
+      Assets.images.worksIcon.svg(),
+      Assets.images.dailyTasksIcon.svg(),
+      Assets.images.groceriesIcon.svg(),
+    ];
+    final categories = [
+      'Projects',
+      'Works',
+      'Daily Taks',
+      'Groceries',
+    ];
+
+    final totalCountTasks = ['2', '4', '5', '0',];
+
     return Scaffold(
       body: SafeArea(
         child: Stack(
           children: [
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.only(
+                top: context.height > MinimumScreenSize.smallScreenHeight
+                    ? context.height * 0.15 + 16
+                    : context.height * 0.2 + 16,
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      bottom: 16.0,
+                      left: 16.0,
+                      right: 16.0,
+                    ),
+                    child: GridView(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: 2,
+                        mainAxisSpacing: 16,
+                        crossAxisSpacing: 16,
+                      ),
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      children: List.generate(4, (index) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: colors[index],
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CircleAvatar(
+                                  radius: 14,
+                                  backgroundColor: Colors.white,
+                                  child: icons[index],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    AutoSizeText(
+                                      categories[index],
+                                      style: GoogleFonts.inter(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                    AutoSizeText(
+                                      totalCountTasks[index],
+                                      style: GoogleFonts.inter(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             Align(
               alignment: Alignment.bottomCenter,
               child: buttonCreateTask(
