@@ -36,10 +36,12 @@ List<Widget> formSignIn({
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          AutoSizeText(
-            "Don't have an account?",
-            style: GoogleFonts.roboto(
-              fontStyle: FontStyle.italic,
+          Flexible(
+            child: AutoSizeText(
+              "Don't have an account?",
+              style: GoogleFonts.roboto(
+                fontStyle: FontStyle.italic,
+              ),
             ),
           ),
           horizontalSpace(8),

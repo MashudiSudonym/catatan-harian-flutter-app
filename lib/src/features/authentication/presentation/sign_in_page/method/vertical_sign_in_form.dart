@@ -1,20 +1,13 @@
 import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
+import 'package:catatan_harian/src/features/authentication/presentation/sign_in_page/method/welcome_text_sign_in.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 Widget verticalSignInForm({
   required List<Widget> form,
 }) =>
     Column(
       children: [
-        Text(
-          'Welcome Back !',
-          style: GoogleFonts.roboto(
-            fontSize: 24,
-            fontWeight: FontWeight.w800,
-            color: Colors.black,
-          ),
-        ),
+        welcomeTextSignIn(),
         verticalSpace(24),
         ...form,
       ],
