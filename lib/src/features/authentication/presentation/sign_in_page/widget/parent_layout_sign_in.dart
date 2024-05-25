@@ -2,12 +2,19 @@ import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
 import 'package:catatan_harian/src/core/common/widget/corner_header_logo.dart';
 import 'package:flutter/material.dart';
 
-Widget parentLayoutSignIn({
-  required BuildContext context,
-  double? topContentPadding,
-  required Widget content,
-}) =>
-    Center(
+class ParentLayoutSignIn extends StatelessWidget {
+  final double? topContentPadding;
+  final Widget? child;
+
+  const ParentLayoutSignIn({
+    super.key,
+    this.topContentPadding,
+    required this.child,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
       child: ListView(
         children: [
           const CornerHeaderLogo(),
@@ -19,8 +26,10 @@ Widget parentLayoutSignIn({
               right: 32,
               top: topContentPadding ?? 0,
             ),
-            child: content,
+            child: child,
           ),
         ],
       ),
     );
+  }
+}

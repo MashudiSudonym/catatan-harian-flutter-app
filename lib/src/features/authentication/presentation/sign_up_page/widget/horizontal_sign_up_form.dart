@@ -1,11 +1,19 @@
 import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
 import 'package:flutter/material.dart';
 
-Widget horizontalSignUpForm({
-  required List<Widget> header,
-  required List<Widget> form,
-}) =>
-    Row(
+class HorizontalSignUpForm extends StatelessWidget {
+  final List<Widget> header;
+  final List<Widget> form;
+
+  const HorizontalSignUpForm({
+    super.key,
+    required this.header,
+    required this.form,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
       children: [
         Expanded(
           flex: 1,
@@ -27,3 +35,5 @@ Widget horizontalSignUpForm({
         ),
       ],
     );
+  }
+}

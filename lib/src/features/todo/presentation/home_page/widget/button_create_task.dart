@@ -1,10 +1,17 @@
 import 'package:catatan_harian/src/core/common/widget/custom_primary_button.dart';
 import 'package:flutter/material.dart';
 
-Widget buttonCreateTask({
-  required VoidCallback? onPressed,
-}) =>
-    Container(
+class ButtonCreateTask extends StatelessWidget {
+  final VoidCallback? onPressed;
+
+  const ButtonCreateTask({
+    super.key,
+    this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       decoration: const BoxDecoration(
         color: Colors.transparent,
       ),
@@ -20,3 +27,5 @@ Widget buttonCreateTask({
         fontSize: 18,
       ),
     );
+  }
+}

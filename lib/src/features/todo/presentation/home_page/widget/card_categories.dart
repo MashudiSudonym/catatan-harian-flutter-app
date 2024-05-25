@@ -4,14 +4,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget cardCategories({
-  required Color? color,
-  required SvgPicture? icon,
-  required String? category,
-  required String? totalCountTask,
-  required Function() onPressed,
-}) =>
-    Container(
+class CardCategories extends StatelessWidget {
+  final Color? color;
+  final SvgPicture? icon;
+  final String? category;
+  final String? totalCountTask;
+  final Function() onPressed;
+
+  const CardCategories({
+    super.key,
+    required this.color,
+    required this.icon,
+    required this.category,
+    required this.totalCountTask,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: color,
@@ -50,3 +61,5 @@ Widget cardCategories({
         ),
       ),
     ).onClick(onPressed);
+  }
+}

@@ -3,9 +3,9 @@ import 'package:catatan_harian/src/core/common/widget/full_screen_background.dar
 import 'package:catatan_harian/src/core/routing/router_provider.dart';
 import 'package:catatan_harian/src/features/authentication/presentation/sign_up_page/method/form_sign_up.dart';
 import 'package:catatan_harian/src/features/authentication/presentation/sign_up_page/method/header_sign_up.dart';
-import 'package:catatan_harian/src/features/authentication/presentation/sign_up_page/method/horizontal_sign_up_form.dart';
-import 'package:catatan_harian/src/features/authentication/presentation/sign_up_page/method/parent_layout_sign_up.dart';
-import 'package:catatan_harian/src/features/authentication/presentation/sign_up_page/method/vertical_sign_up_form.dart';
+import 'package:catatan_harian/src/features/authentication/presentation/sign_up_page/widget/horizontal_sign_up_form.dart';
+import 'package:catatan_harian/src/features/authentication/presentation/sign_up_page/widget/parent_layout_sign_up.dart';
+import 'package:catatan_harian/src/features/authentication/presentation/sign_up_page/widget/vertical_sign_up_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -45,11 +45,9 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 key: const Key(
                   'Body Sign Up Small',
                 ),
-                builder: (_) => parentLayoutSignUp(
-                  context: context,
-                  content: verticalSignUpForm(
+                builder: (_) => ParentLayoutSignUp(
+                  child: VerticalSignUpForm(
                     header: headerSignUp(
-                      context: context,
                       radius: 100,
                     ),
                     form: formSignUp(
@@ -72,11 +70,9 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 key: const Key(
                   'Body Sign Up Medium and Up',
                 ),
-                builder: (_) => parentLayoutSignUp(
-                  context: context,
-                  content: horizontalSignUpForm(
+                builder: (_) => ParentLayoutSignUp(
+                  child: HorizontalSignUpForm(
                     header: headerSignUp(
-                      context: context,
                       radius: 100,
                     ),
                     form: formSignUp(

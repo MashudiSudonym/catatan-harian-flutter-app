@@ -5,14 +5,25 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget header({
-  required Function() onPressed,
-  required double? height,
-  required double? radius,
-  required String? username,
-  required String? imageProfileUrl,
-}) =>
-    Container(
+class Header extends StatelessWidget {
+  final Function() onPressed;
+  final double? height;
+  final double? radius;
+  final String? username;
+  final String? imageProfileUrl;
+
+  const Header({
+    super.key,
+    required this.onPressed,
+    required this.height,
+    required this.radius,
+    required this.username,
+    required this.imageProfileUrl,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.2),
         boxShadow: [
@@ -48,3 +59,5 @@ Widget header({
         ],
       ),
     );
+  }
+}

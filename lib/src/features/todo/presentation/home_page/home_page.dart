@@ -2,9 +2,9 @@ import 'dart:math';
 
 import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
 import 'package:catatan_harian/gen/assets.gen.dart';
-import 'package:catatan_harian/src/features/todo/presentation/home_page/method/button_create_task.dart';
-import 'package:catatan_harian/src/features/todo/presentation/home_page/method/card_categories.dart';
-import 'package:catatan_harian/src/features/todo/presentation/home_page/method/header.dart';
+import 'package:catatan_harian/src/features/todo/presentation/home_page/widget/button_create_task.dart';
+import 'package:catatan_harian/src/features/todo/presentation/home_page/widget/card_categories.dart';
+import 'package:catatan_harian/src/features/todo/presentation/home_page/widget/header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -71,7 +71,7 @@ class HomePage extends ConsumerWidget {
                       children: List.generate(
                         4,
                         (index) {
-                          return cardCategories(
+                          return CardCategories(
                             color: colors[index],
                             icon: icons[index],
                             category: categories[index],
@@ -91,7 +91,7 @@ class HomePage extends ConsumerWidget {
             ),
             Align(
               alignment: Alignment.bottomCenter,
-              child: buttonCreateTask(
+              child: ButtonCreateTask(
                 onPressed: () {
                   context.showSnackBar('Create New Task Page');
                 },
@@ -99,7 +99,7 @@ class HomePage extends ConsumerWidget {
             ),
             Align(
               alignment: Alignment.topCenter,
-              child: header(
+              child: Header(
                 onPressed: () {
                   context.showSnackBar('Profile Page');
                 },
