@@ -1,3 +1,4 @@
+import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
 import 'package:flutter/material.dart';
 
 Widget horizontalSignUpForm({
@@ -14,11 +15,13 @@ Widget horizontalSignUpForm({
             ],
           ),
         ),
+        horizontalSpace(16),
         Expanded(
           flex: 2,
           child: Column(
             children: [
               ...form,
+              verticalSpace(16),
             ],
           ),
         ),

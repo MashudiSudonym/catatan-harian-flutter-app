@@ -17,7 +17,6 @@ Widget buttonCreateTask({
         onPressed: onPressed,
         backgroundColor: const Color(0xFF9747FF),
         minimumSize: const Size.fromHeight(58),
-        maximumSize: const Size.fromHeight(58),
         fontSize: 18,
       ),
     );

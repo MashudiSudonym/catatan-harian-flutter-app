@@ -4,7 +4,11 @@ import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-List<Widget> headerSignUp({required BuildContext context}) => [
+List<Widget> headerSignUp({
+  required BuildContext context,
+  required double radius,
+}) =>
+    [
       Text(
         'Sign Up',
         style: GoogleFonts.roboto(
@@ -15,9 +19,7 @@ List<Widget> headerSignUp({required BuildContext context}) => [
       ),
       verticalSpace(24),
       CircleAvatar(
-        radius: context.height > MinimumScreenSize.smallScreenHeight
-            ? context.width * 0.18
-            : context.height * 0.18,
+        radius: radius,
         backgroundImage: NetworkImage(
           'https://picsum.photos/${Random(100).nextInt(1000)}',
         ),

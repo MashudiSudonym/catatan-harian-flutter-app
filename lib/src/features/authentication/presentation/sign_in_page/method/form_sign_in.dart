@@ -31,6 +31,10 @@ List<Widget> formSignIn({
       CustomPrimaryButton(
         onPressed: signInButton,
         labelText: 'Sign In',
+        minimumSize: const Size(
+              double.infinity,
+              48,
+            ),
       ),
       verticalSpace(32),
       Row(

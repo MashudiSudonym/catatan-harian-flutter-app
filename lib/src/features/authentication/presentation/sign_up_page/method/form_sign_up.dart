@@ -45,20 +45,26 @@ List<Widget> formSignUp({
       CustomPrimaryButton(
         onPressed: signUpButton,
         labelText: 'Sign Up',
+        minimumSize: const Size(
+              double.infinity,
+              48,
+            ),
       ),
       verticalSpace(32),
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          AutoSizeText(
-            "Already have an account?",
-            style: GoogleFonts.roboto(
-              fontStyle: FontStyle.italic,
+          Flexible(
+            child: AutoSizeText(
+              "Already have an account?",
+              style: GoogleFonts.roboto(
+                fontStyle: FontStyle.italic,
+              ),
             ),
           ),
           horizontalSpace(8),
           AutoSizeText(
-            "Sign Up",
+            "Sign In",
             style: GoogleFonts.roboto(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,

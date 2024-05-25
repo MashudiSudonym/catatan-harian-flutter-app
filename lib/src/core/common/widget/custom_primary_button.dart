@@ -7,7 +7,6 @@ class CustomPrimaryButton extends StatelessWidget {
   final String? labelText;
   final VoidCallback? onPressed;
   final Size? minimumSize;
-  final Size? maximumSize;
   final Color? backgroundColor;
   final Color? foregroundColor;
   final double? fontSize;
@@ -17,7 +16,6 @@ class CustomPrimaryButton extends StatelessWidget {
     this.labelText,
     this.onPressed,
     this.minimumSize,
-    this.maximumSize,
     this.backgroundColor,
     this.foregroundColor,
     this.fontSize,
