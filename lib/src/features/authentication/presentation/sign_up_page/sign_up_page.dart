@@ -47,7 +47,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 ),
                 builder: (_) => parentLayoutSignUp(
                   context: context,
-                  content: verticalSignUpForm(
+                  child: verticalSignUpForm(
                     header: headerSignUp(
                       context: context,
                       radius: 100,
@@ -74,7 +74,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 ),
                 builder: (_) => parentLayoutSignUp(
                   context: context,
-                  content: horizontalSignUpForm(
+                  child: horizontalSignUpForm(
                     header: headerSignUp(
                       context: context,
                       radius: 100,

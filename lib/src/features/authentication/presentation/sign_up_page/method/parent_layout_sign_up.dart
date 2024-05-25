@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 
 Widget parentLayoutSignUp({
   required BuildContext context,
-  required Widget content,
+  required Widget child,
 }) =>
     Center(
       child: ListView(
@@ -15,7 +15,7 @@ Widget parentLayoutSignUp({
           verticalSpace(context.height * 0.15),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 32),
-            child: content,
+            child: child,
           ),
         ],
       ),

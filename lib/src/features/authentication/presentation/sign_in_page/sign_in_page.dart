@@ -39,7 +39,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
                 key: const Key('Body Sign In Small'),
                 builder: (_) => parentLayoutSignIn(
                   context: context,
-                  content: verticalSignInForm(
+                  child: verticalSignInForm(
                     form: formSignIn(
                       ref: ref,
                       emailController: emailController,
@@ -59,7 +59,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
                 builder: (_) => parentLayoutSignIn(
                   context: context,
                   topContentPadding: 16,
-                  content: horizontalSignInForm(
+                  child: horizontalSignInForm(
                     form: formSignIn(
                       ref: ref,
                       emailController: emailController,

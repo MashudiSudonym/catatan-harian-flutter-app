@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 Widget parentLayoutSignIn({
   required BuildContext context,
   double? topContentPadding,
-  required Widget content,
+  required Widget child,
 }) =>
     Center(
       child: ListView(
@@ -19,7 +19,7 @@ Widget parentLayoutSignIn({
               right: 32,
               top: topContentPadding ?? 0,
             ),
-            child: content,
+            child: child,
           ),
         ],
       ),
