@@ -1,4 +1,3 @@
-import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
 import 'package:catatan_harian/gen/assets.gen.dart';
 import 'package:catatan_harian/src/core/common/widget/full_screen_background.dart';
 import 'package:catatan_harian/src/core/routing/router_provider.dart';
