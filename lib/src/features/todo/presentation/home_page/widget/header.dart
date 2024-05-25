@@ -28,9 +28,9 @@ class Header extends StatelessWidget {
         color: Colors.white.withOpacity(0.2),
         boxShadow: [
           BoxShadow(
-            color: Colors.white.withOpacity(0.4).withOpacity(0.2),
-            offset: const Offset(0, 6),
-            blurRadius: 6,
+            color: Colors.amberAccent.withOpacity(0.25),
+            offset: const Offset(0, -60),
+            blurRadius: 25,
           ),
         ],
       ),
@@ -41,21 +41,25 @@ class Header extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          AutoSizeText(
-            'Hello $username,',
-            style: GoogleFonts.inter(
-              fontSize: 24,
-              fontWeight: FontWeight.w500,
+          Flexible(
+            child: AutoSizeText(
+              'Hello $username,',
+              style: GoogleFonts.inter(
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
-          CircleAvatar(
-            radius: radius,
-            backgroundImage: NetworkImage(
-              imageProfileUrl ??
-                  'https://picsum.photos/${Random(100).nextInt(1000)}',
-            ),
-            backgroundColor: Colors.white.withOpacity(0.4),
-          ).onClick(onPressed),
+          Flexible(
+            child: CircleAvatar(
+              radius: radius,
+              backgroundImage: NetworkImage(
+                imageProfileUrl ??
+                    'https://picsum.photos/${Random(100).nextInt(1000)}',
+              ),
+              backgroundColor: Colors.white.withOpacity(0.4),
+            ).onClick(onPressed),
+          ),
         ],
       ),
     );

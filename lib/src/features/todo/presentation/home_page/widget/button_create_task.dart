@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:catatan_harian/src/core/common/widget/custom_primary_button.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +14,14 @@ class ButtonCreateTask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        color: Colors.transparent,
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFFEDBE7D).withOpacity(0.2),
+            offset: const Offset(0, 50),
+            blurRadius: 20,
+          ),
+        ],
       ),
       padding: const EdgeInsets.symmetric(
         horizontal: 24,
