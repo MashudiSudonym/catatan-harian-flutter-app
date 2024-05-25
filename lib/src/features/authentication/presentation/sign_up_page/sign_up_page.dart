@@ -45,8 +45,10 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 key: const Key(
                   'Body Sign Up Small',
                 ),
+
                 builder: (_) => ParentLayoutSignUp(
                   child: VerticalSignUpForm(
+
                     header: headerSignUp(
                       radius: 100,
                     ),
@@ -70,6 +72,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 key: const Key(
                   'Body Sign Up Medium and Up',
                 ),
+
                 builder: (_) => ParentLayoutSignUp(
                   child: HorizontalSignUpForm(
                     header: headerSignUp(

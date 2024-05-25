@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+
 class ParentLayoutSignUp extends StatelessWidget {
   final Widget? child;
   const ParentLayoutSignUp({
