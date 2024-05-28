@@ -1,6 +1,7 @@
 import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:catatan_harian/gen/assets.gen.dart';
+import 'package:catatan_harian/src/core/common/widget/full_screen_background.dart';
 import 'package:catatan_harian/src/core/routing/router_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -12,30 +13,27 @@ class SplashPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Assets.images.splashOnBoardBg.image(
-            fit: BoxFit.fill,
-            width: context.width,
-          ),
-          Center(
-            child: Container(
-              height: context.height * 0.15,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Assets.images.iconCatatanHarian
+      body: FullScreenBackground(
+        image: Assets.images.splashOnBoardBg.image().image,
+        child: Center(
+          child: Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
+            child: Row(
+              children: [
+                Flexible(
+                  child: Assets.images.iconCatatanHarian
                       .image(
-                        height: context.height * 0.5,
+                        height: context.height * 0.25,
                       )
                       .onClick(
                         () =>
                             ref.read(routerProvider).pushNamed('sign-in-page'),
                       ),
-                  SizedBox(
+                ),
+                Flexible(
+                  child: SizedBox(
                     width: context.width / 2,
                     child: DefaultTextStyle(
                       style: GoogleFonts.inter(
@@ -56,11 +54,11 @@ class SplashPage extends ConsumerWidget {
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-        ],
+        ),
       ),
     );
   }

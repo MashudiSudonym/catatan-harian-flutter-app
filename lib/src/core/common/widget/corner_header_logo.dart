@@ -13,20 +13,24 @@ class CornerHeaderLogo extends StatelessWidget {
       width: context.width * 0.50,
       padding: const EdgeInsets.symmetric(
         horizontal: 16,
-        vertical: 32,
+        vertical: 24,
       ),
       child: Row(
         children: [
-          Assets.images.iconCatatanHarian
-              .image(
-                height: 25,
+          Flexible(
+            child: Assets.images.iconCatatanHarian
+                .image(
+                  height: 25,
+                ),
+          ),
+          Flexible(
+            child: AutoSizeText(
+              'Catatan Harian',
+              style: GoogleFonts.inter(
+                fontSize: 10,
+                fontWeight: FontWeight.w800,
+                color: Colors.black,
               ),
-          AutoSizeText(
-            'Catatan Harian',
-            style: GoogleFonts.inter(
-              fontSize: 10,
-              fontWeight: FontWeight.w800,
-              color: Colors.black,
             ),
           ),
         ],

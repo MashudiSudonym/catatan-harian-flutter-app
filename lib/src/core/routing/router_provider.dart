@@ -22,7 +22,7 @@ Raw<GoRouter> router(RouterRef ref) => GoRouter(
         GoRoute(
           path: '/sign-in',
           name: 'sign-in-page',
-          builder: (context, state) => SignInPage(),
+          builder: (context, state) => const SignInPage(),
         ),
         GoRoute(
           path: '/sign-up',

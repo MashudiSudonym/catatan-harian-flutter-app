@@ -1,55 +1,80 @@
-import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
 import 'package:catatan_harian/gen/assets.gen.dart';
-import 'package:catatan_harian/src/core/shared/misc/method.dart';
-import 'package:catatan_harian/src/core/shared/widget/corner_header_logo.dart';
-import 'package:catatan_harian/src/core/shared/widget/custom_text_field_transparent.dart';
+import 'package:catatan_harian/src/core/common/widget/full_screen_background.dart';
+import 'package:catatan_harian/src/core/routing/router_provider.dart';
+import 'package:catatan_harian/src/features/authentication/presentation/sign_in_page/method/form_sign_in.dart';
+import 'package:catatan_harian/src/features/authentication/presentation/sign_in_page/widget/horizontal_sign_in_form.dart';
+import 'package:catatan_harian/src/features/authentication/presentation/sign_in_page/widget/parent_layout_sign_in.dart';
+import 'package:catatan_harian/src/features/authentication/presentation/sign_in_page/widget/vertical_sign_in_form.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class SignInPage extends ConsumerWidget {
-  SignInPage({super.key});
-
-  final TextEditingController emailController = TextEditingController();
+class SignInPage extends ConsumerStatefulWidget {
+  const SignInPage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ConsumerStatefulWidget> createState() => _SignInPageState();
+}
+
+class _SignInPageState extends ConsumerState<SignInPage> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Assets.images.signInBg.image(
-            fit: BoxFit.fill,
-            width: context.width,
-          ),
-          const CornerHeaderLogo(),
-          Center(
-            child: Container(
-              width: context.width * 0.8,
-              padding: const EdgeInsets.all(16),
-              child: IntrinsicHeight(
-                child: Column(
-                  children: [
-                    Text(
-                      'Welcome Back !',
-                      style: GoogleFonts.roboto(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.black,
-                      ),
-                    ).expanded(),
-                    verticalSpace(24),
-                    CustomTextFieldTransparent(
-                      labelText: 'e-mail',
-                      controller: emailController,
-                      maxLines: 1,
-                      keyboardType: TextInputType.emailAddress,
+      body: FullScreenBackground(
+        image: Assets.images.signInBg.image().image,
+        child: AdaptiveLayout(
+          body: SlotLayout(
+            config: <Breakpoint, SlotLayoutConfig>{
+              Breakpoints.small: SlotLayout.from(
+                key: const Key('Body Sign In Small'),
+                builder: (_) => ParentLayoutSignIn(
+                  child: VerticalSignInForm(
+                    form: formSignIn(
+                      ref: ref,
+                      emailController: emailController,
+                      passwordController: passwordController,
+                      signInButton: () {
+                        ref.read(routerProvider).pushNamed('home-page');
+                      },
+                      signUpButton: () {
+                        ref.read(routerProvider).pushNamed('sign-up-page');
+                      },
                     ),
-                  ],
+                  ),
                 ),
               ),
-            ),
+              Breakpoints.mediumAndUp: SlotLayout.from(
+                key: const Key('Body Sign In Medium and Up'),
+                builder: (_) => ParentLayoutSignIn(
+                  topContentPadding: 16,
+                  child: HorizontalSignInForm(
+                    form: formSignIn(
+                      ref: ref,
+                      emailController: emailController,
+                      passwordController: passwordController,
+                      signInButton: () {
+                        ref.read(routerProvider).pushNamed('home-page');
+                      },
+                      signUpButton: () {
+                        ref.read(routerProvider).pushNamed('sign-up-page');
+                      },
+                    ),
+                  ),
+                ),
+              ),
+            },
           ),
-        ],
+        ),
       ),
     );
   }

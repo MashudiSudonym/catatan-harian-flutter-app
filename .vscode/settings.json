@@ -16,4 +16,29 @@
     "pubspec.yaml": "pubspec.lock,pubspec_overrides.yaml,.packages,.flutter-plugins,.flutter-plugins-dependencies,.metadata",
     "*.dart": "${capture}.g.dart, ${capture}.freezed.dart, ${capture}.chopper.dart"
   },
+  "[dart]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off",
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "dart.previewFlutterUiGuides": true,
+  "editor.stickyScroll.enabled": true,
+  "dart.warnWhenEditingFilesOutsideWorkspace": false,
+  "dart.renameFilesWithClasses": "prompt",
+  "editor.fontLigatures": true,
+  "editor.letterSpacing": 1.5,
+  "terminal.integrated.letterSpacing": 1.5,
+  "workbench.colorCustomizations": {
+    "terminal.background": "#00000000",
+    "minimap.background": "#00000000"
+  },
+  "workbench.panel.defaultLocation": "right",
 }

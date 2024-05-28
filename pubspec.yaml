@@ -7,7 +7,7 @@ environment:
   sdk: ">=3.3.4 <4.0.0"
 
 dependencies:
-  adaptive_responsive_util: ^1.0.3
+  adaptive_responsive_util: ^1.0.5
   animated_text_kit: ^4.2.2
   auto_size_text: ^3.0.0
   cached_network_image: ^3.3.1
@@ -16,6 +16,7 @@ dependencies:
   expandable_text: ^2.3.0
   flutter:
     sdk: flutter
+  flutter_adaptive_scaffold: ^0.1.10+2
   flutter_dotenv: ^5.1.0
   flutter_local_notifications: ^17.1.1
   flutter_native_splash: ^2.4.0
