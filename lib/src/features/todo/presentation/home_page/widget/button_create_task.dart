@@ -1,10 +1,8 @@
-import 'dart:ui';
-
 import 'package:catatan_harian/src/core/common/widget/custom_primary_button.dart';
 import 'package:flutter/material.dart';
 
 class ButtonCreateTask extends StatelessWidget {
-  final VoidCallback? onPressed;
+  final void Function()? onPressed;
 
   const ButtonCreateTask({
     super.key,

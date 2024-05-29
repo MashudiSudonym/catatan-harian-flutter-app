@@ -5,6 +5,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:catatan_harian/gen/assets.gen.dart';
 import 'package:catatan_harian/src/core/common/widget/card_todo.dart';
 import 'package:catatan_harian/src/core/common/widget/dynamic_wrapping_content.dart';
+import 'package:catatan_harian/src/core/routing/router_provider.dart';
 import 'package:catatan_harian/src/features/todo/presentation/home_page/widget/button_create_task.dart';
 import 'package:catatan_harian/src/features/todo/presentation/home_page/widget/card_categories.dart';
 import 'package:catatan_harian/src/features/todo/presentation/home_page/widget/header.dart';
@@ -35,7 +36,6 @@ class HomePage extends ConsumerWidget {
       'Daily Tasks',
       'Groceries',
     ];
-
     final totalCountTasks = [
       '2',
       '4',
@@ -48,7 +48,9 @@ class HomePage extends ConsumerWidget {
         visible: context.height < MinimumScreenSize.smallScreenHeight,
         child: FloatingActionButton(
           backgroundColor: const Color(0xFF9747FF),
-          onPressed: () {},
+          onPressed: () {
+            ref.read(routerProvider).pushNamed('create-todo-page');
+          },
           child: const Icon(
             Icons.add,
             color: Colors.white,
@@ -166,7 +168,7 @@ class HomePage extends ConsumerWidget {
                 alignment: Alignment.bottomCenter,
                 child: ButtonCreateTask(
                   onPressed: () {
-                    context.showSnackBar('Create New Task Page');
+                    ref.read(routerProvider).pushNamed('create-todo-page');
                   },
                 ),
               ),
@@ -175,7 +177,7 @@ class HomePage extends ConsumerWidget {
               alignment: Alignment.topCenter,
               child: Header(
                 onPressed: () {
-                  context.showSnackBar('Profile Page');
+                  ref.read(routerProvider).pushNamed('profile-page');
                 },
                 height: context.height > MinimumScreenSize.smallScreenHeight
                     ? context.height * 0.1
