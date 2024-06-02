@@ -75,33 +75,31 @@ class HomePage extends ConsumerWidget {
                       left: 16.0,
                       right: 16.0,
                     ),
-                    child: Expanded(
-                      child: GridView(
-                        gridDelegate:
-                            const SliverGridDelegateWithMaxCrossAxisExtent(
-                          maxCrossAxisExtent: 250,
-                          childAspectRatio: 2,
-                          mainAxisSpacing: 16,
-                          crossAxisSpacing: 16,
-                        ),
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        children: List.generate(
-                          4,
-                          (index) {
-                            return CardCategories(
-                              color: colors[index],
-                              icon: icons[index],
-                              category: categories[index],
-                              totalCountTask: totalCountTasks[index],
-                              onPressed: () {
-                                context.showSnackBar(
-                                  'Show List of ${categories[index]}',
-                                );
-                              },
-                            );
-                          },
-                        ),
+                    child: GridView(
+                      gridDelegate:
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
+                        maxCrossAxisExtent: 250,
+                        childAspectRatio: 2,
+                        mainAxisSpacing: 16,
+                        crossAxisSpacing: 16,
+                      ),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: List.generate(
+                        4,
+                        (index) {
+                          return CardCategories(
+                            color: colors[index],
+                            icon: icons[index],
+                            category: categories[index],
+                            totalCountTask: totalCountTasks[index],
+                            onPressed: () {
+                              context.showSnackBar(
+                                'Show List of ${categories[index]}',
+                              );
+                            },
+                          );
+                        },
                       ),
                     ),
                   ),
