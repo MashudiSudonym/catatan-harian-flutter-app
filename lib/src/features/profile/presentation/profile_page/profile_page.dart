@@ -11,7 +11,13 @@ class ProfilePage extends ConsumerWidget {
       body: SafeArea(
         child: ListView(
           children: [
-            
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: Assets.images.signInBg.image().image,
+                ),
+              ),
+            ),
           ],
         ),
       ),
