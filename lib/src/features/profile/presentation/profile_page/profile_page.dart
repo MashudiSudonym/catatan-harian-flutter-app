@@ -38,7 +38,7 @@ class ProfilePage extends ConsumerWidget {
               ),
               Breakpoints.mediumAndUp: SlotLayout.from(
                 key: const Key('Profile in medium and up'),
-              builder: (_) => HorizontalProfile(
+                builder: (_) => HorizontalProfile(
                   imageProfileUrl:
                       'https://picsum.photos/${Random(100).nextInt(1000)}',
                   userProfileName: 'Foo',

@@ -1,6 +1,3 @@
-import 'dart:math';
-
-import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
 import 'package:catatan_harian/src/features/profile/presentation/profile_page/method/content_profile.dart';
 import 'package:flutter/material.dart';
 
@@ -29,19 +26,13 @@ class VerticalProfile extends StatelessWidget {
     return ListView(
       children: [
         ...contentProfile(
-          imageProfileUrl: 'https://picsum.photos/${Random(100).nextInt(1000)}',
-          userProfileName: 'Foo',
-          userProfileEmail: 'email@email.email',
-          userProfilePhone: '081234567890',
-          editEmailOnClick: () {
-            context.showSnackBar('edit email clicked');
-          },
-          editPhoneOnClick: () {
-            context.showSnackBar('edit phone clicked');
-          },
-          logoutOnClick: () {
-            context.showSnackBar('logout clicked');
-          },
+          imageProfileUrl: imageProfileUrl,
+          userProfileName: userProfileName,
+          userProfileEmail: userProfileEmail,
+          userProfilePhone: userProfilePhone,
+          editEmailOnClick: editEmailOnClick,
+          editPhoneOnClick: editPhoneOnClick,
+          logoutOnClick: logoutOnClick,
           context: context,
         ),
       ],
