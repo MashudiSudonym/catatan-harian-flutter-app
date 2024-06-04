@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:adaptive_responsive_util/adaptive_responsive_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:catatan_harian/gen/assets.gen.dart';
-import 'package:catatan_harian/src/core/common/widget/custom_primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,7 +13,6 @@ List<Widget> contentProfile({
   required String? userProfilePhone,
   required Function()? editEmailOnClick,
   required Function()? editPhoneOnClick,
-  required Function()? logoutOnClick,
   required BuildContext context,
 }) =>
     [
@@ -144,18 +142,6 @@ List<Widget> contentProfile({
                   ),
                 ),
               ],
-            ),
-            verticalSpace(context.height * 0.4),
-            CustomPrimaryButton(
-              backgroundColor: Colors.red[700],
-              labelText: 'Logout',
-              onPressed: logoutOnClick,
-              minimumSize: Size(
-                double.infinity,
-                context.height < MinimumScreenSize.smallScreenHeight
-                    ? 58
-                    : (context.height / 18),
-              ),
             ),
           ],
         ),

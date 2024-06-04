@@ -15,7 +15,7 @@ part 'router_provider.g.dart';
 Raw<GoRouter> router(RouterRef ref) => GoRouter(
       routes: [
         GoRoute(
-          path: '/splash',
+          path: '/',
           name: 'splash-page',
           builder: (context, state) => const SplashPage(),
         ),
@@ -55,5 +55,5 @@ Raw<GoRouter> router(RouterRef ref) => GoRouter(
           builder: (context, state) => const UpdateProfilePage(),
         ),
       ],
-      initialLocation: '/splash',
+      initialLocation: '/',
     );
