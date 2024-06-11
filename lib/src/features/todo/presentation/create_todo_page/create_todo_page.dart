@@ -24,8 +24,19 @@ class CreateTodoPage extends ConsumerWidget {
         ),
       ),
       body: ListView(
-        children: const [
-          
+        padding: const EdgeInsets.only(
+          top: 16,
+          left: 16,
+          right: 16,
+        ),
+        children: [
+          AutoSizeText(
+            'Title Task',
+            style: GoogleFonts.inter(
+              fontWeight: FontWeight.w600,
+              fontSize: 18,
+            ),
+          ),
         ],
       ),
     );
